@@ -4,7 +4,6 @@ require "fileutils"
 require 'faker'
 require 'yaml'
 require 'time'
-require 'pry'
 require_relative 'google_authorize'
 
 

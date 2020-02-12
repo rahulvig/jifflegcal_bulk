@@ -2,7 +2,6 @@ require "google/apis/calendar_v3"
 require "date"
 require "fileutils"
 require 'time'
-require 'pry'
 require_relative 'google_authorize'
 
 #code for deletion taken from https://developers.google.com/calendar/create-events
@@ -24,7 +23,7 @@ response = service.list_events(calendar_id,
                                single_events: true,
                                order_by:      "startTime",
                                time_min:      DateTime.now.rfc3339,
-                               time_max:      (DateTime.now + 90).rfc3339)
+                               time_max:      (DateTime.now + 100).rfc3339)
 puts "No upcoming events found" if response.items.empty?
 response.items.each do |event|
   unless event.i_cal_uid.include? "JIFFLENOW"
